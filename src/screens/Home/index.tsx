@@ -1,12 +1,14 @@
 import { Header } from "@/components/header";
+import { Percent } from "@/components/percent";
 
-import { Container, Text } from "@/screens/Home/styles";
+import { Container } from "@/screens/Home/styles";
 
 export function Home() {
   return (
     <Container>
       <Header />
-      <Text>Olá Mundo</Text>
+
+      <Percent quantity={90.86} />
     </Container>
   );
 }
