@@ -1,16 +1,15 @@
-import { ArrowUpRight } from "phosphor-react-native";
+import { ArrowLeft } from "phosphor-react-native";
 import styled, { css } from "styled-components/native";
 
 export interface ContainerProps {
   percentageQuantity?: number;
 }
 
-export const Container = styled.TouchableOpacity<ContainerProps>`
+export const Container = styled.View<ContainerProps>`
   position: relative;
-  min-height: 102px;
+  min-height: 200px;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
   ${({ theme, percentageQuantity }) => css`
     background-color: ${percentageQuantity
       ? percentageQuantity > 35
@@ -20,7 +19,13 @@ export const Container = styled.TouchableOpacity<ContainerProps>`
   `}
 `;
 
-export const Icon = styled(ArrowUpRight).attrs<ContainerProps>(
+export const IconContainer = styled.TouchableOpacity`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+`;
+
+export const Icon = styled(ArrowLeft).attrs<ContainerProps>(
   ({ theme, percentageQuantity }) => ({
     size: 24,
     color: percentageQuantity
@@ -29,11 +34,7 @@ export const Icon = styled(ArrowUpRight).attrs<ContainerProps>(
         : theme.colors["red-dark"]
       : theme.colors["gray-600"],
   })
-)`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-`;
+)``;
 
 export const Title = styled.Text`
   ${({ theme }) => css`

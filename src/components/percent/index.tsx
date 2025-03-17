@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+
 import {
   Container,
   Description,
@@ -11,8 +13,14 @@ interface PercentProps extends ContainerProps {
 }
 
 export function Percent({ quantity, percentageQuantity }: PercentProps) {
+  const navigation = useNavigation();
+
+  function handleOpenStatistics() {
+    navigation.navigate("statistics");
+  }
+
   return (
-    <Container percentageQuantity={quantity}>
+    <Container percentageQuantity={quantity} onPress={handleOpenStatistics}>
       <Icon percentageQuantity={quantity} />
 
       <Title>{quantity}%</Title>
