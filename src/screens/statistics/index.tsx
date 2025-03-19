@@ -1,13 +1,16 @@
+import { ContentStatistics } from "@/components/content-statistics";
 import { HeaderStatistics } from "@/components/header-statistics";
 
-import { Container, ContentStatistics } from "@/screens/statistics/styles";
+import { Container } from "@/screens/statistics/styles";
 
 export function Statistics() {
-  return (
-    <Container>
-      <HeaderStatistics quantity={90.86} />
+  const quantityPercent = 90.86;
 
-      <ContentStatistics></ContentStatistics>
+  return (
+    <Container quantity={quantityPercent}>
+      <HeaderStatistics quantity={quantityPercent} />
+
+      <ContentStatistics />
     </Container>
   );
 }
