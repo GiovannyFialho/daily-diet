@@ -1,24 +1,33 @@
-import { Plus } from "phosphor-react-native";
+import { FlatList } from "react-native";
 
-import {
-  Button,
-  ButtonText,
-  Container,
-  Title,
-} from "@/components/meals/styles";
-import { useTheme } from "styled-components/native";
+import { MealItem, type MealItemProps } from "@/components/meal-item";
 
-export function Meals() {
-  const { colors } = useTheme();
+import { ContainerList, Spacer, Title } from "@/components/meals/styles";
 
+export interface MealsProps {
+  date: string;
+  items: MealItemProps[];
+}
+
+export function Meals({ date, items }: MealsProps) {
   return (
-    <Container>
-      <Title>Refeições</Title>
+    <ContainerList>
+      <Title>{date}</Title>
 
-      <Button>
-        <Plus size={18} color={colors.white} />
-        <ButtonText>Nova refeição</ButtonText>
-      </Button>
-    </Container>
+      <FlatList
+        data={items}
+        keyExtractor={(item) => item.name}
+        ItemSeparatorComponent={() => <Spacer />}
+        nestedScrollEnabled={true}
+        contentContainerStyle={{ flexGrow: 1 }}
+        renderItem={({ item }) => (
+          <MealItem
+            time={item.time}
+            name={item.name}
+            status={{ type: item.status.type }}
+          />
+        )}
+      />
+    </ContainerList>
   );
 }

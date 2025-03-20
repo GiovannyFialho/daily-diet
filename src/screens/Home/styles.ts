@@ -14,3 +14,12 @@ export const Text = styled.Text`
     color: ${theme.colors["green-dark"]};
   `}
 `;
+
+export const ContainerList = styled.View`
+  flex: 1;
+  margin: 30px 0;
+`;
+
+export const Spacer = styled.View`
+  height: 20px;
+`;
