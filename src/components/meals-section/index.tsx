@@ -1,4 +1,6 @@
+import { useNavigation } from "@react-navigation/native";
 import { Plus } from "phosphor-react-native";
+import { useTheme } from "styled-components/native";
 
 import {
   Button,
@@ -6,16 +8,20 @@ import {
   Container,
   Title,
 } from "@/components/meals-section/styles";
-import { useTheme } from "styled-components/native";
 
 export function MealsSection() {
   const { colors } = useTheme();
+  const navigation = useNavigation();
+
+  function handleGoToFooRegistration() {
+    navigation.navigate("new-meal");
+  }
 
   return (
     <Container>
       <Title>Refeições</Title>
 
-      <Button>
+      <Button onPress={handleGoToFooRegistration}>
         <Plus size={18} color={colors.white} />
         <ButtonText>Nova refeição</ButtonText>
       </Button>
