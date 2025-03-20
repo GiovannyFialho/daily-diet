@@ -1,12 +1,13 @@
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "react-native";
 import styled, { css } from "styled-components/native";
 
 type ContainerProps = {
   quantity: number;
 };
 
-export const Container = styled(SafeAreaView)<ContainerProps>`
+export const Container = styled(View)<ContainerProps>`
   flex: 1;
+  padding-top: 30px;
   background-color: ${({ theme, quantity }) =>
     quantity > 35 ? theme.colors["green-light"] : theme.colors["red-light"]};
 `;
