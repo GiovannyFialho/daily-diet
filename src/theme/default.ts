@@ -1,31 +1,30 @@
 export const defaultTheme = {
-  colors: {
-    "red-dark": "#BF3B44",
-    "red-mid": "#F3BABD",
-    "red-light": "#F4E6E7",
-    "green-dark": "#639339",
-    "green-mid": "#CBE4B4",
-    "green-light": "#E5F0DB",
-
-    "gray-100": "#1B1D1E",
-    "gray-200": "#333638",
-    "gray-300": "#5C6265",
-    "gray-400": "#B9BBBC",
-    "gray-500": "#DDDEDF",
-    "gray-600": "#EFF0F0",
-    "gray-700": "#FAFAFA",
-    white: "#FFFFFF",
+  COLORS: {
+    WHITE: "#FFFFFF",
+    GRAY_7: "#FAFAFA",
+    GRAY_6: "#EFF0F0",
+    GRAY_5: "#DDDEDF",
+    GRAY_4: "#B9BBBC",
+    GRAY_3: "#5C6265",
+    GRAY_2: "#333638",
+    GRAY_1: "#1B1D1E",
+    GREEN_LIGHT: "#E5F0DB",
+    GREEN_MID: "#CBE4B4",
+    GREEN_DARK: "#639339",
+    RED_LIGHT: "#F4E6E7",
+    RED_MID: "#F3BABD",
+    RED_DARK: "#BF3B44",
   },
-  font: {
-    regular: "NunitoSans_400Regular",
-    bold: "NunitoSans_700Bold",
-    sizes: {
-      xs: "12px",
-      sm: "14px",
-      md: "16px",
-      lg: "18px",
-      xl: "24px",
-      "2xl": "32px",
-    },
+  FONT_FAMILY: {
+    REGULAR: "NunitoSans_400Regular",
+    BOLD: "NunitoSans_700Bold",
   },
-} as const;
+  FONT_SIZE: {
+    SSM: 12,
+    SM: 14,
+    MD: 16,
+    LG: 18,
+    XL: 24,
+    XXL: 32,
+  },
+};
